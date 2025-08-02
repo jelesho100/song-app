@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= song.name %></title>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>
+        <%= song.name %> by <%= song.artist %>
+    </h1>
+    <a href="/users/<%= user._id %>/songs/<%= song._id %>/edit">
+      Edit song
+    </a>
+    <form
+      action="/users/<%= user._id %>/songs/<%= song._id %>?_method=DELETE"
+      method="POST">
+      <button type="submit">Delete this song</button>
+    </form>
+  </body>
+</html>

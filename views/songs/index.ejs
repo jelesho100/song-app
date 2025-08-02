@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Songs</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+   <h1>Your Songs</h1> 
+   <a href="/users/<%=user._id%>/songs/new">Add a new song</a>
+   <ul>
+    <% songs.forEach(song => { %>
+        <li>
+            <a href="/users/<%= user._id %>/songs/<%= song._id %>">
+            <%= song.name %> by <%= song.artist %>
+            </a>
+        </li>
+    <% }); %>
+   </ul>
+</body>
+</html>

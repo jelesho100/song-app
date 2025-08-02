@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editing <%= song.title %></title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Edit <%= song.name %> by <%= song.artist %></h1>
+    <form action="/users/<%= user._id %>/songs/<%= song._id %>?_method=PUT" method="POST">
+    <label for="artist">Artist:</label>
+    <input type="text" name="artist" id="artist" value="<%= song.artist %>"/>
+
+    <label for="name">Song Name:</label>
+    <input type="text" name="name" id="name" value="<%= song.name %>"/>
+
+    <button type="submit">Add Song</button>
+    </form>
+
+</body>
+</html>
