@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Music!</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Songs</title>
+  <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body>
-    <%- include('../partials/_navbar.ejs') %>
-    <h1>Happy Music!</h1>
-    <p>A Music Streaming Platform</p>
-    <% if (user) { %>
-    <h1> Welcome to the app, <%= user.username %>!</h1>
-    <p>
-        <a href="/auth/sign-out">Sign out</a>
-    </p>
-    <% } else { %>
-        <h1>Welcome to the app, Guest</h1>
-        <p>
-            <a href="/auth/sign-up">Sign Up</a> or <a href="/auth/sign-in">Sign In</a>  
-        </p>
-    <% } %>  
+  <%- include('../partials/_navbar.ejs') %>
+
+  <div class="page-container">
+    <h1>Your Songs</h1> 
+    <a class="button-link" href="/users/<%= user._id %>/songs/new">+ Add a new song</a>
+
+    <ul class="song-list">
+      <% songs.forEach(song => { %>
+        <li>
+          <a href="/users/<%= user._id %>/songs/<%= song._id %>">
+            <%= song.name %> by <%= song.artist %>
+          </a>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
 </body>
 </html>
+
+

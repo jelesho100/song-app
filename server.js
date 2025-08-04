@@ -23,6 +23,7 @@ mongoose.connection.on("connected", () => {
 
 const User = require("./models/user.js")
 
+app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
 app.use(morgan('dev'));
