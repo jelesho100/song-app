@@ -17,6 +17,14 @@ const songSchema = new mongoose.Schema({
 
 });
 
+const playlistSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    songs: [songSchema]
+});
+
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
@@ -26,7 +34,8 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    songs: [songSchema]
+    songs: [songSchema],
+    playlists: [playlistSchema]
 });
 
 const User = mongoose.model("User", userSchema);

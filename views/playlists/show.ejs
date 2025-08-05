@@ -1,0 +1,21 @@
+<a class="button-link" href="/users/<%= user._id %>/songs">← Back to Your Songs</a>
+
+<h1><%= playlist.name %></h1>
+<ul>
+ <% playlist.songs.forEach((song, i) => { %>
+  <li>
+    <%= song.name %> by <%= song.artist %>
+
+    <form action="/playlists/<%= playlist._id %>/songs/<%= i %>?_method=DELETE" method="POST" style="display:inline">
+      <button type="submit">Remove</button>
+    </form>
+  </li>
+<% }) %>
+</ul>
+<h2>Add a Song to This Playlist</h2>
+
+<form action="/playlists/<%= playlist._id %>/songs" method="POST">
+  <input type="text" name="name" placeholder="Song name" required />
+  <input type="text" name="artist" placeholder="Artist name" required />
+  <button type="submit">Add Song</button>
+</form>

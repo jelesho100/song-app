@@ -1,0 +1,11 @@
+<a class="button-link" href="/users/<%= user._id %>/songs">← Back to Your Songs</a>
+
+<h1>My Playlists</h1>
+<a href="/playlists/new">Create Playlist</a>
+<ul>
+  <% playlists.forEach(pl => { %>
+    <li>
+      <a href="/playlists/<%= pl._id %>"><%= pl.name %></a>
+    </li>
+  <% }) %>
+</ul>
