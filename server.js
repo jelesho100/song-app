@@ -17,7 +17,7 @@ const port = process.env.PORT ? process.env.PORT : "3000";
 const authController = require("./controllers/auth.js");
 
 mongoose.connect(process.env.MONGODB_URI);
-
+console.log(process.env);
 mongoose.connection.on("connected", () => {
     console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 });
@@ -42,12 +42,11 @@ app.use('/users/:userId/songs', songsController);
 app.use("/playlists", isSignedIn, playlistsController);
 
 app.get("/", async (req, res) => {
-    if (req.session.user) {
+    if(req.session.user){
         res.redirect(`/users/${req.session.user._id}/songs`);
-    } else {
-        res.render('index.ejs', { user: req.session.user, songs: [] });
-
-    }
+    }else {
+            res.render('index.ejs'); 
+    }  
 });
 
 

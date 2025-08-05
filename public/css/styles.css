@@ -1,4 +1,3 @@
-/* General layout */
 body {
   margin: 0;
   padding: 0;
@@ -21,7 +20,7 @@ h1, h2 {
   margin-bottom: 20px;
 }
 
-/* Song list styling */
+
 .song-list {
   list-style-type: none;
   padding: 0;
@@ -36,7 +35,7 @@ h1, h2 {
   font-size: 1.1rem;
 }
 
-/* Buttons */
+
 .button-link {
   display: inline-block;
   margin: 10px 5px;
@@ -53,7 +52,6 @@ h1, h2 {
   background-color: #2980b9;
 }
 
-/* Delete button */
 .delete-button {
   padding: 12px 20px;
   background-color: #e74c3c;
