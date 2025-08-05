@@ -42,11 +42,12 @@ app.use('/users/:userId/songs', songsController);
 app.use("/playlists", isSignedIn, playlistsController);
 
 app.get("/", async (req, res) => {
-    if(req.session.user){
+    if (req.session.user) {
         res.redirect(`/users/${req.session.user._id}/songs`);
-    }else {
-            res.render('index.ejs'); 
-    }  
+    } else {
+        res.render('index.ejs', { user: req.session.user, songs: [] });
+
+    }
 });
 
 
