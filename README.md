@@ -1,8 +1,10 @@
 # song-app
 App-name: Song-app
+
 Getting Started: https://song-app-e0b9eb3db71a.herokuapp.com/
 https://github.com/jelesho100/song-app
 https://trello.com/c/md5q3vKm/16-wireframe-1
+
 Technologies Used: Node.js – server-side runtime for running JavaScript
 Express.js – web framework for handling routes and middleware
 MongoDB – database to store users, songs, and playlists
